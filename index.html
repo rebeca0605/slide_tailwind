@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --animate-fade: slider 12s infinite, fade 4s;
+           @keyframes slider {
+    0%, 33% {
+        background-image: url(./img/area-externa.jpeg);
+        --text-description: "Área externa"
+    }
+    34%, 66% {
+        background-image: url(./img/aula-lopal.jpeg);
+        --text-description: "Aula de Lógica de Programação";
+    }
+
+    67%, 100% {
+        background-image: url(./img/biblioteca.jpg);
+        --text-description: "Biblioteca"
+    }
+}
+
+            @keyframes fade {
+                0% {
+                    opacity: 0;
+                }
+                15%, 85% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    </style>
+    <title>Slide Tailwind</title>
+</head>
+
+<body class="h-screen bg-[#0003] grid place-items-center">
+    <div class="absolute shadow-[0_0_16px_#000] w-[80%] h-[80%] overflow-hidden rounded-[12px] bg-center bg-cover 
+        animate-[fade_12s_infinite_0s] animate-fade 
+        after:absolute after:w-full after:bottom-[0] after:py-[16px] after:bg-[#0009] after:text-[#fff] after:text-center after:text-[1.5rem] after:font-[sans-serif] 
+        after:content-(--text-description)">
+    </div>
+</body>
+
+</html>
